@@ -3,7 +3,6 @@ import { CommitlintConfigJira } from '../@types'
 
 export const commitlintConfigJira: CommitlintConfigJira = {
   rules: {
-    'header-max-length': [2, 'always', 72],
     [commitlintJiraConstants.JIRA_RULES.taskIdEmpty]: [2, 'always'],
     [commitlintJiraConstants.JIRA_RULES.taskIdMinLength]: [2, 'always', 3],
     [commitlintJiraConstants.JIRA_RULES.taskIdMaxLength]: [2, 'always', 9],
@@ -21,6 +20,11 @@ export const commitlintConfigJira: CommitlintConfigJira = {
       2,
       'always',
       commitlintJiraConstants.UPPERCASE,
+    ],
+    [commitlintJiraConstants.JIRA_RULES.commitMessageSeparator]: [
+      2,
+      'always',
+      commitlintJiraConstants.COMMIT_MESSAGE_SEPARATOR,
     ],
   },
 }

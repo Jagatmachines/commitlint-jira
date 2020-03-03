@@ -1,12 +1,12 @@
 {
   "name": "commitlint-config-jira",
   "description": "A recomended config who contain preconfigured rules for jira commits messages style",
-  "version": "1.0.9",
+  "version": "1.3.0",
   "license": "MIT",
   "author": {
     "name": "Gherciu Gheorghe",
     "email": "gherciu553@gmail.com",
-    "url": "https://gherciu.github.io/portfolio/"
+    "url": "https://gherciu.github.io/"
   },
   "keywords": [
     "commitlint",
@@ -18,10 +18,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/commitlint-jira"
+    "url": "https://github.com/Gherciu/commitlint-jira"
   },
   "bugs": {
-    "url": "https://github.com/commitlint-jira/issues"
+    "url": "https://github.com/Gherciu/commitlint-jira/issues"
   },
   "main": "./build/index.js",
   "types": "./@types",
@@ -38,7 +38,7 @@
     "webpack-cli": "^3.3.8"
   },
   "dependencies": {
-    "commitlint-jira-utils": "^1.0.12"
+    "commitlint-jira-utils": "^1.3.0"
   },
   "gitHead": "7f76615b342be1a91e2350158577141fca95a953"
 }

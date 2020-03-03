@@ -3,7 +3,7 @@ import * as shell from 'shelljs'
 
 describe('commitlintPluginJiraTests', () => {
   const testCommitMessages = {
-    singleScope: 'IB-1111: test commit message',
+    singleScope: 'IB-2121: test commit message',
   }
 
   it('should load with succes provided commitlint config', () => {

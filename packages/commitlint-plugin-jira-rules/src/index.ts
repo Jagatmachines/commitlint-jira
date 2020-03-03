@@ -6,6 +6,7 @@ import jiraTaskIdEmptyRuleResolver from './rules/jiraTaskIdEmptyRuleResolver'
 import jiraTaskIdSeparatorRuleResolver from './rules/jiraTaskIdSeparatorRuleResolver'
 import jiraTaskIdCaseRuleResolver from './rules/jiraTaskIdCaseRuleResolver'
 import jiraCommitStatusCaseRuleResolver from './rules/jiraCommitStatusCaseRuleResolver'
+import jiraCommitMessageSeparatorRuleResolver from './rules/jiraCommitMessageSeparatorRuleResolver'
 
 export const commitlintPluginJira: CommitlintPluginJira = {
   rules: {
@@ -20,6 +21,8 @@ export const commitlintPluginJira: CommitlintPluginJira = {
     [commitlintJiraConstants.JIRA_RULES.taskIdCase]: jiraTaskIdCaseRuleResolver,
     [commitlintJiraConstants.JIRA_RULES
       .commitStatusCase]: jiraCommitStatusCaseRuleResolver,
+    [commitlintJiraConstants.JIRA_RULES
+      .commitMessageSeparator]: jiraCommitMessageSeparatorRuleResolver,
   },
 }
 

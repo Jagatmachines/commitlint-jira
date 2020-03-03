@@ -1,11 +1,12 @@
 <div align="center">
-  <img width="300" height="200"
+  <img height="200"
     src="https://raw.githubusercontent.com/Gherciu/commitlint-jira/master/logo.png">
   <h1>commitlint-config-jira</h1>
   <p>A <b>recomended</b> config who contain preconfigured rules for jira commits messages style. Part of <a href="https://github.com/Gherciu/commitlint-jira">commitlint-jira</a> monorepo</p>
 </div>
 
-![GitHub](https://img.shields.io/github/license/Gherciu/commitlint-jira)
+[![GitHub](https://img.shields.io/github/license/Gherciu/commitlint-jira)](https://github.com/Gherciu/commitlint-jira/blob/master/LICENSE)
+[![Multipack](https://img.shields.io/badge/Generated%20from-Gherciu%2Fmultipack-green)](https://github.com/Gherciu/multipack)
 
 ## Getting started.
 
@@ -15,8 +16,8 @@
 npm install --save-dev @commitlint/cli commitlint-plugin-jira-rules commitlint-config-jira
 ```
 
-- [commitlint-config-jira](https://github.com/Gherciu/commitlint-jira/packages/commitlint-config-jira) - is a **recomended** config who contain preconfigured rules for jira commits messages style. See all rules in description below
-- [commitlint-plugin-jira-rules](https://github.com/Gherciu/commitlint-jira/packages/commitlint-plugin-jira-rules) - is a plugin that implement all jira commits messages style rules and validate commit messages
+- [commitlint-config-jira](https://github.com/Gherciu/commitlint-jira/tree/master/packages/commitlint-config-jira) - is a **recomended** config who contain preconfigured rules for jira commits messages style. See all rules in description below
+- [commitlint-plugin-jira-rules](https://github.com/Gherciu/commitlint-jira/tree/master/packages/commitlint-plugin-jira-rules) - is a plugin that implement all jira commits messages style rules and validate commit messages
 
 ##### Configure commitlint to use jira commits messages style config
 
@@ -110,6 +111,34 @@ git commit -m"[wip]IB-21: My commit message body"
 git commit -m"[WIP]IB-21: My commit message body"
 ```
 
+`jira-commit-message-separator` - this rule check if commit message separator match provided separator.
+
+```bash
+// Preconfigured and recomended value in commitlint-config-jira is ":"
+// ❌ Bad commit messages
+git commit -m"IB-21/ My commit message body"
+git commit -m"IB-21 - My commit message body"
+git commit -m"IB-21% My commit message body"
+// ✅ Good commit messages
+git commit -m"IB-21: My commit message body"
+```
+
+## Customise/Override `commitlint-jira-config` rules
+
+```diff
+// commitlint.config.js
+module.exports = {
+  plugins: ['commitlint-plugin-jira-rules'],
+  extends: ['jira'],
+  rules: {
+  // to Customise/Override a rule
++  'jira-task-id-max-length': [2, 'always', 10]
+  // to turn off a rule
++ 'jira-task-id-max-length': 0
+  },
+}
+```
+
 ## Contributing
 
 1. Fork it!
@@ -117,6 +146,10 @@ git commit -m"[WIP]IB-21: My commit message body"
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
+
+#### Or you can sponsor via [Open Collective](https://opencollective.com/gherciu-gheorghe/)
+
+[![Open Collective](https://opencollective.com/gherciu-gheorghe/tiers/sponsor.svg?avatarHeight=60)](https://opencollective.com/gherciu-gheorghe/)
 
 ## Author
 

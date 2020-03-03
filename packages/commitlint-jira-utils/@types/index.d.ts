@@ -5,6 +5,7 @@ export interface Rules {
   taskIdCase: string
   taskIdMaxLength: string
   taskIdMinLength: string
+  commitMessageSeparator: string
 }
 
 export interface TCommitlintJiraConstants {
@@ -19,6 +20,7 @@ export interface TCommitlintJiraConstants {
   }
   UPPERCASE: string
   LOWERCASE: string
+  COMMIT_DESCRIPTION_SEPARATOR: string
 }
 
 export type TParseCommitMessage = (

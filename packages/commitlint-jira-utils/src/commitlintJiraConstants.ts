@@ -5,6 +5,7 @@ export const JIRA_RULES = {
   taskIdEmpty: 'jira-task-id-empty',
   taskIdMaxLength: 'jira-task-id-max-length',
   taskIdMinLength: 'jira-task-id-min-length',
+  commitMessageSeparator: 'jira-commit-message-separator',
 }
 
 export const COMMIT_MESSAGE_SEPARATOR = ':'
@@ -17,3 +18,4 @@ export const COMMIT_STATUS_SEPARATORS = {
 }
 export const UPPERCASE = 'uppercase'
 export const LOWERCASE = 'lowercase'
+export const COMMIT_DESCRIPTION_SEPARATOR = '\n'
