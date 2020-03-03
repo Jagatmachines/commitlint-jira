@@ -14,7 +14,8 @@ const jiraCommitStatusCaseRuleResolver: TRuleResolver = (
 
   const commitMessage = parseCommitMessage(rawCommitMessage)
 
-  if (!commitMessage.commitStatus) return [true]
+  if (commitMessage.commitStatus && !rawCommitMessage.includes('['))
+    return [false, `Commit Status may not be empty on ${rawCommitMessage}`]
 
   let isRuleValid = false
 

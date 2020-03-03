@@ -19,7 +19,7 @@ const jiraTaskIdMaxLengthRuleResolver: TRuleResolver = (
 
   return [
     isRuleValid,
-    `${nonValidTaskId} taskId must not be loonger than ${value} characters`,
+    `${nonValidTaskId} taskId must not be longer than ${value} characters`,
   ]
 }
 export default jiraTaskIdMaxLengthRuleResolver

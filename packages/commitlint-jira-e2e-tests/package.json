@@ -2,15 +2,15 @@
   "private": true,
   "name": "commitlint-jira-e2e-tests",
   "devDependencies": {
-    "@types/jest": "^24.0.18",
-    "ts-jest": "^24.1.0",
     "@commitlint/cli": "^8.2.0",
-    "shelljs": "^0.8.3",
+    "@types/jest": "^24.0.18",
     "jest": "^24.9.0",
+    "shelljs": "^0.8.3",
+    "ts-jest": "^24.1.0",
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "commitlint-plugin-jira-rules": "^1.0.0",
-    "commitlint-config-jira": "^1.0.0"
+    "commitlint-config-jira": "^1.0.9",
+    "commitlint-plugin-jira-rules": "^1.0.11"
   }
 }

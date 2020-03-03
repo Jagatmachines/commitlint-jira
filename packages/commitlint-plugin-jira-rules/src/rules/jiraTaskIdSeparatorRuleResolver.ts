@@ -23,7 +23,7 @@ const jiraTaskIdSeparatorRuleResolver: TRuleResolver = (
 
   return [
     isRuleValid,
-    `${nonValidTaskId} taskId header and footer must be separated with "${value}" e.g: IB-2121`,
+    `${nonValidTaskId} taskId header and footer must be separated with "${value}" e.g: FUSEAI-2121`,
   ]
 }
 export default jiraTaskIdSeparatorRuleResolver
