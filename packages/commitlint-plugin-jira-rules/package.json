@@ -1,7 +1,7 @@
 {
   "name": "commitlint-plugin-jira-rules-tickets",
   "description": "A plugin that implement all jira commits messages style rules and validate commit messages",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "license": "MIT",
   "author": {
     "name": "Gherciu Gheorghe",
@@ -38,7 +38,7 @@
     "webpack-cli": "^3.3.8"
   },
   "dependencies": {
-    "commitlint-jira-utils": "^1.3.0"
+    "commitlint-jira-utils": "^1.4.0"
   },
   "gitHead": "7f76615b342be1a91e2350158577141fca95a953"
 }

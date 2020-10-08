@@ -14,7 +14,7 @@ export type TRuleResolver = (
     raw: string
   }>,
   when?: string,
-  value?: string | number | (string | number)[],
+  value?: string | number | boolean | (string | number)[],
 ) => (string | boolean)[]
 
 export interface CommitlintPluginJira {

@@ -6,14 +6,14 @@ describe('commitlintPluginJiraTests', () => {
     singleScope: 'IB-2121: test commit message',
   }
 
-  it('should load with succes provided commitlint config', () => {
+  it('should load with success provided commitlint config', () => {
     let cliOutput = {
       stderr: '',
       code: 0,
     }
     try {
       cliOutput = shell.exec(
-        `echo "${testCommitMessages.singleScope}" | npx commitlint"`,
+        `echo "${testCommitMessages.singleScope}" | npx commitlint`,
       )
     } catch (error) {
       cliOutput = {

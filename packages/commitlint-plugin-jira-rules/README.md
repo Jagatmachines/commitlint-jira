@@ -59,7 +59,7 @@ git commit -m"IB-0000: My commit message body"
 `jira-task-id-max-length` - this rule check if jira task id length is loonger that the provided value.
 
 ```bash
-// Preconfigured and recomended value in commitlint-config-jira is 9 chars
+// Preconfigured and recommended value in commitlint-config-jira is 9 chars
 // ❌ Bad commit messages
 git commit -m"IB-2121212121212121: My commit message body"
 // ✅ Good commit messages
@@ -70,7 +70,7 @@ git commit -m"IB-21: My commit message body"
 `jira-task-id-min-length` - this rule check if jira task id length is shorter that the provided value.
 
 ```bash
-// Preconfigured and recomended value in commitlint-config-jira is 3 chars
+// Preconfigured and recommended value in commitlint-config-jira is 3 chars
 // ❌ Bad commit messages
 git commit -m"I1: My commit message body"
 // ✅ Good commit messages
@@ -81,7 +81,7 @@ git commit -m"IB-21: My commit message body"
 `jira-task-id-case` - this rule check if taskId is in provided case.
 
 ```bash
-// Preconfigured and recomended value in commitlint-config-jira is "uppercase"
+// Preconfigured and recommended value in commitlint-config-jira is "uppercase"
 // ❌ Bad commit messages
 git commit -m"ib-21: My commit message body"
 // ✅ Good commit messages
@@ -92,13 +92,25 @@ git commit -m"IB-21: My commit message body"
 `jira-task-id-separator` - this rule check if taskId header and footer is separated with provided value.
 
 ```bash
-// Preconfigured and recomended value in commitlint-config-jira is "-"
+// Preconfigured and recommended value in commitlint-config-jira is "-"
 // ❌ Bad commit messages
 git commit -m"IB/21: My commit message body"
 git commit -m"IB_21 :My commit message body"
 // ✅ Good commit messages
 git commit -m"IB-2121, IB-21: My commit message body"
 git commit -m"IB-21: My commit message body"
+```
+
+`jira-task-id-project-key` - this rule check if commit message task id starts with specific project key.
+
+```bash
+// Accept a string or an array of strings, by default is disabled
+// For exmample ["PRJ1", "PRJ2"]
+// ❌ Bad commit messages
+git commit -m"IB-21: My commit message body"
+// ✅ Good commit messages
+git commit -m"PRJ1-21, PRJ1-22: My commit message body"
+git commit -m"PRJ2-21: My commit message body"
 ```
 
 `jira-commit-status-case` - this rule check if commit status is in provided case.

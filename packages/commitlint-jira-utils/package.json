@@ -1,7 +1,7 @@
 {
   "name": "commitlint-jira-utils",
   "description": "A set of utils for commitlint-jira monorepo",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "license": "MIT",
   "author": {
     "name": "Gherciu Gheorghe",
