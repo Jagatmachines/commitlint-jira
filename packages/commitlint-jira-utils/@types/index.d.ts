@@ -7,6 +7,7 @@ export interface Rules {
   taskIdMinLength: string
   commitMessageSeparator: string
   taskIdProjectKey: string
+  commitStatusEmpty: string
 }
 
 export interface TCommitlintJiraConstants {

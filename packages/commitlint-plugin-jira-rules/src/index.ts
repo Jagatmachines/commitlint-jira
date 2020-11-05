@@ -8,6 +8,7 @@ import jiraTaskIdCaseRuleResolver from './rules/jiraTaskIdCaseRuleResolver'
 import jiraCommitStatusCaseRuleResolver from './rules/jiraCommitStatusCaseRuleResolver'
 import jiraCommitMessageSeparatorRuleResolver from './rules/jiraCommitMessageSeparatorRuleResolver'
 import jiraTaskIdProjectKeyRuleResolver from './rules/jiraTaskIdProjectKeyRuleResolver'
+import fuseCommitStatusEmptyRuleResolver from './rules/fuseCommitStatusEmptyRuleResolver'
 
 export const commitlintPluginJira: CommitlintPluginJira = {
   rules: {
@@ -26,6 +27,8 @@ export const commitlintPluginJira: CommitlintPluginJira = {
       .commitStatusCase]: jiraCommitStatusCaseRuleResolver,
     [commitlintJiraConstants.JIRA_RULES
       .commitMessageSeparator]: jiraCommitMessageSeparatorRuleResolver,
+      [commitlintJiraConstants.JIRA_RULES
+        .commitStatusEmpty]: fuseCommitStatusEmptyRuleResolver,
   },
 }
 
