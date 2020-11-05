@@ -23,13 +23,13 @@
   "bugs": {
     "url": "https://github.com/Jagatmachines/commitlint-jira/issues"
   },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "husky": "^4.3.0"
+  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "husky": "^4.3.0"
   }
 }
