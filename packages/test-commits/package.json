@@ -18,6 +18,8 @@
     "url": "git+https://github.com/Jagatmachines/commitlint-jira.git"
   },
   "scripts": {
+    "prebuild": "npm i commitlint-jira-utils commitlint-plugin-jira-rules commitlint-config-jira",
+    "build": "react-scripts build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
@@ -25,11 +27,16 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
-    "husky": "^4.3.0"
+    "commitlint-config-jira": "file:../commitlint-config-jira",
+    "commitlint-jira-utils": "file:../commitlint-jira-utils",
+    "commitlint-plugin-jira-rules": "file:../commitlint-plugin-jira-rules",
+    "husky": "^4.3.0",
+    "react-scripts": "latest"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && echo HUSKY_GIT_PARAMS"
     }
-  }
+  },
+  "dependencies": {}
 }
