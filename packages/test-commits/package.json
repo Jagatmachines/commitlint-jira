@@ -30,7 +30,7 @@
     "commitlint-config-jira": "file:../commitlint-config-jira",
     "commitlint-jira-utils": "file:../commitlint-jira-utils",
     "commitlint-plugin-jira-rules": "file:../commitlint-plugin-jira-rules",
-    "husky": "^4.3.0",
+    "husky": "latest",
     "react-scripts": "latest"
   },
   "husky": {
