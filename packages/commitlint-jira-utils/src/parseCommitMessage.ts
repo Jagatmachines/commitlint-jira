@@ -25,7 +25,7 @@ const parseCommitMessage: TParseCommitMessage = rawCommitMessage => {
   const rawCommitHeader =
     commitMessageParts.length >= 2
       ? COMMIT_MESSAGE_SEPARATOR === ' '
-        ? commitMessageParts[1]
+        ? `${commitMessageParts[0]} ${commitMessageParts[1]}`
         : commitMessageParts[0]
       : ''
   const commitHeader = rawCommitHeader
