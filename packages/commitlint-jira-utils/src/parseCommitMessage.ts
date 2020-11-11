@@ -41,10 +41,15 @@ const parseCommitMessage: TParseCommitMessage = rawCommitMessage => {
    */
   const commitFooter =
     commitMessageParts.length > 2
-      ? commitMessageParts
-          .filter((_value, index) => index > 0)
-          .join(COMMIT_MESSAGE_SEPARATOR)
-          .trim()
+      ? COMMIT_MESSAGE_SEPARATOR === ' '
+        ? commitMessageParts
+            .filter((_value, index) => index > 1)
+            .join(COMMIT_MESSAGE_SEPARATOR)
+            .trim()
+        : commitMessageParts
+            .filter((_value, index) => index > 0)
+            .join(COMMIT_MESSAGE_SEPARATOR)
+            .trim()
       : commitMessageParts[commitMessageParts.length - 1].trim()
 
   const rawCommitStatus = rawCommitHeader.split(COMMIT_STATUS_SEPARATORS.end)
