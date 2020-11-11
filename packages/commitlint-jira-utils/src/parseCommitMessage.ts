@@ -1,10 +1,10 @@
 import { TParseCommitMessage } from '../@types'
 import {
+  COMMIT_DESCRIPTION_SEPARATOR,
   COMMIT_MESSAGE_SEPARATOR,
+  COMMIT_STATUS_SEPARATORS,
   COMMIT_TASK_IDS_SEPARATOR,
   COMMIT_TASK_STATUS_PATTERN,
-  COMMIT_STATUS_SEPARATORS,
-  COMMIT_DESCRIPTION_SEPARATOR,
 } from './commitlintJiraConstants'
 
 const parseCommitMessage: TParseCommitMessage = rawCommitMessage => {
@@ -23,7 +23,11 @@ const parseCommitMessage: TParseCommitMessage = rawCommitMessage => {
    * or is not separated corectly
    */
   const rawCommitHeader =
-    commitMessageParts.length >= 2 ? commitMessageParts[0] : ''
+    commitMessageParts.length >= 2
+      ? COMMIT_MESSAGE_SEPARATOR === ' '
+        ? commitMessageParts[1]
+        : commitMessageParts[0]
+      : ''
   const commitHeader = rawCommitHeader
     .replace(COMMIT_TASK_STATUS_PATTERN, '')
     .trim()

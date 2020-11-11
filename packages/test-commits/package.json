@@ -31,7 +31,7 @@
     "commitlint-jira-utils": "file:../commitlint-jira-utils",
     "commitlint-plugin-jira-rules": "file:../commitlint-plugin-jira-rules",
     "husky": "latest",
-    "react-scripts": "latest"
+    "react-scripts": "3.4.1"
   },
   "husky": {
     "hooks": {

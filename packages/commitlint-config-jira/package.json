@@ -26,11 +26,13 @@
   "main": "./build/index.js",
   "types": "./@types",
   "scripts": {
+    "prebuild": "npm i commitlint-jira-utils",
     "build": "rimraf ./build && cross-env NODE_ENV=production webpack",
     "watch": "cross-env NODE_ENV=development webpack -w",
     "postinstall": "opencollective-postinstall || exit 0"
   },
   "devDependencies": {
+    "commitlint-jira-utils": "file:../commitlint-jira-utils",
     "cross-env": "^5.2.1",
     "rimraf": "^2.6.3",
     "ts-loader": "^6.1.0",
@@ -39,7 +41,6 @@
     "webpack-cli": "^3.3.8"
   },
   "dependencies": {
-    "commitlint-jira-utils": "^1.4.0",
     "opencollective-postinstall": "^2.0.2"
   },
   "collective": {

@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":["testCommits"],"mappings":"gJAAA,OAMeA,UALf,WAEE,OAAO,K","file":"static/js/main.abfab5fc.chunk.js","sourcesContent":["// eslint-disable-next-line @typescript-eslint/explicit-function-return-type\nfunction testCommits() {\n  // TODO\n  return true\n}\n\nexport default testCommits\n"],"sourceRoot":""}

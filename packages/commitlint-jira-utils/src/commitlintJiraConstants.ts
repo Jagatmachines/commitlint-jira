@@ -10,7 +10,7 @@ export const JIRA_RULES = {
   commitStatusEmpty: 'fuse-commit-status-empty',
 }
 
-export const COMMIT_MESSAGE_SEPARATOR = ':'
+export const COMMIT_MESSAGE_SEPARATOR = ' '
 export const COMMIT_TASK_IDS_SEPARATOR = ','
 export const COMMIT_TASK_STATUS_PATTERN = /\[.*\]/gi
 export const TASK_ID_SEPARATOR = '-'
