@@ -8,7 +8,7 @@ const jiraCommitMessageSeparatorRuleResolver: TRuleResolver = (
 ) => {
   const rawCommitMessage = parsed.raw
   if (!rawCommitMessage) return [false, 'Commit message should not be empty']
-  console.log("commit msg separator", { parsed, value, rawCommitMessage })
+
   let isRuleValid = false
 
   const findedMatchingSeparators = rawCommitMessage.match(
