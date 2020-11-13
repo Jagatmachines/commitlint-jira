@@ -21,19 +21,26 @@ const jiraTaskIdProjectKeyRuleResolver: TRuleResolver = (
     return [false, 'jira project key should be a string or an array of strings']
   }
 
-  commitMessage.commitTaskIds.forEach(taskId => {
-    if (typeof value === 'string' && new RegExp(`^${value}`).test(taskId)) {
-      nonValidTaskId = taskId
-    }
-
-    if (Array.isArray(value)) {
-      value.forEach(projectKey => {
-        if (new RegExp(`^${projectKey}`).test(taskId)) {
-          nonValidTaskId = taskId
-        }
-      })
-    }
-  })
+  commitMessage.commitTaskIds &&
+    commitMessage.commitTaskIds.forEach(taskId => {
+      if (
+        typeof value === 'string' &&
+        taskId &&
+        new RegExp(`^${value}`).test(taskId)
+      ) {
+        nonValidTaskId = taskId
+      } else if (Array.isArray(value)) {
+        value.forEach(projectKey => {
+          if (new RegExp(`^${projectKey}`).test(taskId)) {
+            nonValidTaskId = taskId
+          } else {
+            nonValidTaskId = commitMessage.commitTaskIds[0]
+          }
+        })
+      } else {
+        nonValidTaskId = commitMessage.commitTaskIds[0]
+      }
+    })
 
   isRuleValid = !!nonValidTaskId
   console.log('isididid', value, typeof value, Array(value).join('|'))
