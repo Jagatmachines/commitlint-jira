@@ -18,7 +18,11 @@ export const commitlintConfigJira: CommitlintConfigJira = {
       commitlintJiraConstants.UPPERCASE,
     ],
     // 4
-    [commitlintJiraConstants.JIRA_RULES.taskIdProjectKey]: [2, 'always', false],
+    [commitlintJiraConstants.JIRA_RULES.taskIdProjectKey]: [
+      2,
+      'always',
+      ['JIRAID', 'FUSEID'],
+    ],
     // 5
     [commitlintJiraConstants.JIRA_RULES.taskIdSeparator]: [
       2,

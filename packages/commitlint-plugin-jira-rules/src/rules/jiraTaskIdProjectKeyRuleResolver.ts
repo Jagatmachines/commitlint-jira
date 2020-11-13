@@ -36,11 +36,11 @@ const jiraTaskIdProjectKeyRuleResolver: TRuleResolver = (
   })
 
   isRuleValid = !!nonValidTaskId
-
+  console.log('isididid', value, typeof value, Array(value).join('|'))
   return [
     isRuleValid,
     `${nonValidTaskId} taskId must start with project key ${
-      typeof value === 'string' ? value : Array(value).join(' or ')
+      typeof value === 'string' ? value : value && Array(value).join('or')
     }`,
   ]
 }
