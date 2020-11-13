@@ -35,7 +35,11 @@ export const commitlintConfigJira: CommitlintConfigJira = {
       'always',
       commitlintJiraConstants.UPPERCASE,
     ],
-    [commitlintJiraConstants.JIRA_RULES.commitStatusEmpty]: [2, 'always'],
+    [commitlintJiraConstants.JIRA_RULES.commitStatusEmpty]: [
+      2,
+      'always',
+      ['[CLASSROOM]', '[ADS]'],
+    ],
   },
 }
 
