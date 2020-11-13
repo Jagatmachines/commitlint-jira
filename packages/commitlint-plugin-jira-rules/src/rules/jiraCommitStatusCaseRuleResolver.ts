@@ -1,6 +1,6 @@
 import {
-  parseCommitMessage,
   commitlintJiraConstants,
+  parseCommitMessage,
 } from 'commitlint-jira-utils'
 import { TRuleResolver } from '../../@types'
 
@@ -15,7 +15,10 @@ const jiraCommitStatusCaseRuleResolver: TRuleResolver = (
   const commitMessage = parseCommitMessage(rawCommitMessage)
 
   if (commitMessage.commitStatus && !rawCommitMessage.includes('['))
-    return [false, `Commit Status may not be empty on ${rawCommitMessage}`]
+    return [
+      false,
+      `The commit message must provide a commit status. Eg: [CLASSROOM], [SCHOOL], etc`,
+    ]
 
   let isRuleValid = false
 

@@ -21,7 +21,7 @@ const jiraCommitMessageSeparatorRuleResolver: TRuleResolver = (
 
   return [
     isRuleValid,
-    `Commit message parts must be separated with "${value}" e.g: IB-2121${value}My commit message body`,
+    `Commit message parts must be separated with "${value}" e.g: FUSEAI-2121${value}My commit message body`,
   ]
 }
 export default jiraCommitMessageSeparatorRuleResolver

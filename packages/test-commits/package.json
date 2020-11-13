@@ -19,7 +19,7 @@
   },
   "scripts": {
     "prebuild": "npm i commitlint-jira-utils commitlint-plugin-jira-rules commitlint-config-jira",
-    "build": "react-scripts build",
+    "build": "react-scripts build ",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {

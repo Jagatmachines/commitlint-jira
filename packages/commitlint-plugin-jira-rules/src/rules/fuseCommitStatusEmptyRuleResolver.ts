@@ -16,20 +16,16 @@ const fuseCommitStatusEmptyRuleResolver: TRuleResolver = (
     Array.isArray(value) &&
     commitMessage.commitStatus &&
     value.includes(`[${commitMessage.commitStatus}]`)
-      ? true
-      : false
 
   const isRuleValid = value
-    ? doesCommitStatusMatchAnyValue
-      ? true
-      : false
+    ? !!doesCommitStatusMatchAnyValue
     : !isCommitStatusEmpty
 
   return [
     isRuleValid,
     value && !isCommitStatusEmpty
-      ? `the commit status must be one of these values: ${value}`
-      : 'the commit message must provide a commit status. Eg: [CLASSROOM], [SCHOOL], etc',
+      ? `The commit status must be one of these values: ${value}`
+      : 'The commit message must provide a commit status. Eg: [CLASSROOM], [SCHOOL], etc',
   ]
 }
 export default fuseCommitStatusEmptyRuleResolver
