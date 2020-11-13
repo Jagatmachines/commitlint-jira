@@ -24,7 +24,6 @@ const fuseCommitStatusEmptyRuleResolver: TRuleResolver = (
       ? true
       : false
     : !isCommitStatusEmpty
-  console.log('valueee', { value, isRuleValid })
 
   return [
     isRuleValid,

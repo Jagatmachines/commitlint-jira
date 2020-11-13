@@ -4,7 +4,7 @@ import {
   COMMIT_MESSAGE_SEPARATOR,
   COMMIT_STATUS_SEPARATORS,
   COMMIT_TASK_IDS_SEPARATOR,
-  COMMIT_TASK_STATUS_PATTERN
+  COMMIT_TASK_STATUS_PATTERN,
 } from './commitlintJiraConstants'
 
 const parseCommitMessage: TParseCommitMessage = rawCommitMessage => {
@@ -56,12 +56,19 @@ const parseCommitMessage: TParseCommitMessage = rawCommitMessage => {
   const commitStatus = rawCommitStatus.length
     ? rawCommitStatus[0].replace(COMMIT_STATUS_SEPARATORS.start, '').trim()
     : ''
-console.log({rawCommitStatus, commitStatus})
+
   const commitTaskIds = commitHeader
     .split(COMMIT_TASK_IDS_SEPARATOR)
     .map(taskId => taskId.trim())
     .filter(taskId => taskId)
 
+  console.log('COMMIT PARTS:', {
+    commitTaskIds,
+    commitFooter,
+    commitHeader,
+    commitStatus,
+  })
+  
   return {
     commitTaskIds,
     commitFooter,
