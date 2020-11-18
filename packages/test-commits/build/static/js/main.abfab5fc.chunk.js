@@ -1,2 +1,0 @@
-(this["webpackJsonptest-commits"]=this["webpackJsonptest-commits"]||[]).push([[0],[function(t,s,n){t.exports=n(1)},function(t,s,n){"use strict";n.r(s),s.default=function(){return!0}}],[[0,1]]]);
-//# sourceMappingURL=main.abfab5fc.chunk.js.map
