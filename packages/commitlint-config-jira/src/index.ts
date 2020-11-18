@@ -42,7 +42,9 @@ export const commitlintConfigJira: CommitlintConfigJira = {
     [commitlintJiraConstants.JIRA_RULES.commitStatusEmpty]: [
       2,
       'always',
-      ['[CLASSROOM]', '[ADS]'],
+      [
+        /* '[CLASSROOM]', '[ADS]' */
+      ],
     ],
   },
 }

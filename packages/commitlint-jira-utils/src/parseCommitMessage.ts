@@ -24,7 +24,9 @@ const parseCommitMessage: TParseCommitMessage = rawCommitMessage => {
    */
   const rawCommitHeader =
     commitMessageParts.length >= 2
-      ? COMMIT_MESSAGE_SEPARATOR === ' '
+      ? COMMIT_MESSAGE_SEPARATOR === ' ' &&
+        commitMessage.includes(COMMIT_STATUS_SEPARATORS.start) &&
+        commitMessage.includes(COMMIT_STATUS_SEPARATORS.end)
         ? `${commitMessageParts[0]} ${commitMessageParts[1]}`
         : commitMessageParts[0]
       : ''
@@ -53,9 +55,12 @@ const parseCommitMessage: TParseCommitMessage = rawCommitMessage => {
       : commitMessageParts[commitMessageParts.length - 1].trim()
 
   const rawCommitStatus = rawCommitHeader.split(COMMIT_STATUS_SEPARATORS.end)
-  const commitStatus = rawCommitStatus.length
-    ? rawCommitStatus[0].replace(COMMIT_STATUS_SEPARATORS.start, '').trim()
-    : ''
+  const commitStatus =
+    rawCommitStatus.length &&
+    rawCommitStatus.includes(COMMIT_STATUS_SEPARATORS.start) &&
+    rawCommitStatus.includes(COMMIT_STATUS_SEPARATORS.end)
+      ? rawCommitStatus[0].replace(COMMIT_STATUS_SEPARATORS.start, '').trim()
+      : ''
 
   const commitTaskIds = commitHeader
     .split(COMMIT_TASK_IDS_SEPARATOR)
@@ -68,7 +73,7 @@ const parseCommitMessage: TParseCommitMessage = rawCommitMessage => {
     commitHeader,
     commitStatus,
   })
-  
+
   return {
     commitTaskIds,
     commitFooter,

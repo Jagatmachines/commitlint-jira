@@ -11,9 +11,10 @@ const jiraTaskIdMaxLengthRuleResolver: TRuleResolver = (
 
   const commitMessage = parseCommitMessage(rawCommitMessage)
 
-  const nonValidTaskId = commitMessage.commitTaskIds.find(
-    taskId => taskId.length > value,
-  )
+  const nonValidTaskId =
+    commitMessage.commitTaskIds &&
+    value &&
+    commitMessage.commitTaskIds.find(taskId => taskId.length > value)
 
   const isRuleValid = !nonValidTaskId
 

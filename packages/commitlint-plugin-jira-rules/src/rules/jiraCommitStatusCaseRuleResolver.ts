@@ -14,11 +14,12 @@ const jiraCommitStatusCaseRuleResolver: TRuleResolver = (
 
   const commitMessage = parseCommitMessage(rawCommitMessage)
 
-  if (commitMessage.commitStatus && !rawCommitMessage.includes('['))
-    return [
-      false,
-      `The commit message must provide a commit status. Eg: [CLASSROOM], [SCHOOL], etc`,
-    ]
+  /* when commit status must be mandatory if commit status case is defined */
+  // if (commitMessage.commitStatus && !rawCommitMessage.includes('['))
+  //   return [
+  //     false,
+  //     `The commit message must provide a commit status. Eg: [CLASSROOM], [SCHOOL], etc`,
+  //   ]
 
   let isRuleValid = false
 
